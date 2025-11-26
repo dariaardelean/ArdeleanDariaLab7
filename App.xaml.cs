@@ -27,5 +27,6 @@ LocalApplicationData), "ShoppingList.db3"));
 
         MainPage = new NavigationPage(new AppShell());
 
+
     }
 }
