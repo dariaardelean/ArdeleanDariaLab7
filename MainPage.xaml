@@ -22,7 +22,7 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Aceasta este paginamea pentru laboratorul MAUI"
+                Text="Aceasta este pagina mea pentru laboratorul MAUI"
                 FontSize="18"
                 HorizontalOptions="Center" />
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SQLite;
 using ArdeleanDariaLab7.Models;
 
+
 namespace ArdeleanDariaLab7.Data
 {
     public class ShoppingListDatabase
@@ -18,6 +19,7 @@ namespace ArdeleanDariaLab7.Data
             _database.CreateTableAsync<ShopList>().Wait();
             _database.CreateTableAsync<Product>().Wait();
             _database.CreateTableAsync<ListProduct>().Wait();
+            _database.CreateTableAsync<Shop>().Wait();
         }
 
         public Task<List<ShopList>> GetShopListsAsync()
@@ -72,7 +74,7 @@ namespace ArdeleanDariaLab7.Data
             return _database.Table<Product>().ToListAsync();
         }
 
-        // 🔥 Cerinta 16 – mutată corect în interiorul clasei
+        //  Cerinta 16
         public Task<int> SaveListProductAsync(ListProduct listp)
         {
             if (listp.ID != 0)
@@ -101,5 +103,29 @@ namespace ArdeleanDariaLab7.Data
             );
         }
 
+        //lab 10-cerinta 8
+        public Task<List<Shop>> GetShopsAsync()
+        {
+            return _database.Table<Shop>().ToListAsync();
+        }
+
+        public Task<int> SaveShopAsync(Shop shop)
+        {
+            if (shop.ID != 0)
+            {
+                return _database.UpdateAsync(shop);
+            }
+            else
+            {
+                return _database.InsertAsync(shop);
+            }
+        }
+
+
+        //lab 10 ultima cerinta
+        public Task<int> DeleteShopAsync(Shop shop)
+        {
+            return _database.DeleteAsync(shop);
+        }
     }
 }

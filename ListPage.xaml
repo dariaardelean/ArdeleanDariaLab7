@@ -22,7 +22,7 @@
             </Editor.Behaviors>
 
         </Editor>
-
+        <Picker x:Name="ShopPicker" Title="Enter Shop Name"/>
         <!-- Grid cu Save și Delete -->
         <Grid Margin="0,10,0,10">
             <Grid.ColumnDefinitions>
